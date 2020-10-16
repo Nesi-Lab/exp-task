@@ -1,14 +1,15 @@
 import React from 'react'
-import { Experiment, jsPsych } from 'jspsych-react'
+import { Experiment } from 'jspsych-react'
 import { tl } from './timelines/main'
-import { MTURK, breathingAudio } from './config/main'
+// import { MTURK, breathingAudio } from './config/main'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import { getTurkUniqueId } from './lib/utils'
 
 // conditionally load electron and psiturk based on MTURK config variable
-const isElectron = !MTURK
+// const isElectron = !MTURK
+const isElectron = true
 let ipcRenderer = false;
 let psiturk = false
 if (isElectron) {
@@ -24,14 +25,15 @@ if (isElectron) {
 
 class App extends React.Component {
   render() {
-    console.log("Outside Turk:", jsPsych.turk.turkInfo().outsideTurk)
-    console.log("Turk:", MTURK)
+    // console.log("Outside Turk:", jsPsych.turk.turkInfo().outsideTurk)
+    // console.log("Turk:", MTURK)
 
     return (
       <div className="App">
         <Experiment settings={{
           timeline: tl,
-          preload_audio: [breathingAudio],
+          // preload_audio: [breathingAudio],
+          preload_audio: [],
           on_data_update: (data) => {
             if ( ipcRenderer ) {
               ipcRenderer.send('data', data)

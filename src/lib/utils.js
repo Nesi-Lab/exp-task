@@ -71,7 +71,19 @@ const getTurkUniqueId = () => {
 const getUserId = (data) => {
   const patientId = JSON.parse(data.responses)['Q0']
   jsPsych.data.addProperties({patient_id: patientId, timestamp: Date.now()})
-  console.log("ID", patientId)
+  
+}
+
+const getUserBio = (data) => {
+  const participantId = JSON.parse(data.responses)['Q0']
+  const participantTown = JSON.parse(data.responses)['Q1']
+  const participantBio = JSON.parse(data.responses)['Q2']
+  jsPsych.data.addProperties({participant_id: participantId, timestamp: Date.now()})
+  jsPsych.data.addProperties({participant_town: participantTown, timestamp: Date.now()})
+  jsPsych.data.addProperties({participant_bio: participantBio, timestamp: Date.now()})
+  console.log("ID", participantId)
+  console.log("town", participantTown)
+  console.log("bio", participantBio)
 }
 
 const beep = (audioCodes) => {
@@ -97,6 +109,7 @@ export {
   generateWaitSet,
   startKeypressListener,
   getUserId,
+  getUserBio,
   getTurkUniqueId,
   beep
 }

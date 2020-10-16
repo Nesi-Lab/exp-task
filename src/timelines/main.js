@@ -1,56 +1,53 @@
-import userId from '../trials/userId'
-import experimentStart from '../trials/experimentStart'
-import experimentEnd from '../trials/experimentEnd'
-import holdUpMarker from '../trials/holdUpMarker'
-import taskBlock from './taskBlock'
+import bio from '../trials/participantBio'
+import { experimentStart } from '../trials/experimentStart'
 import taskSetUp from './taskSetUp'
-import { instructions1, instructions2 } from '../trials/instructions'
-import adjustVolume from '../trials/adjustVolume'
-import camera from '../trials/camera'
-
-import { AT_HOME, VIDEO, MTURK, defaultBlockSettings, practiceBlockSettings} from '../config/main'
+import { linkSM, processSM, friendsSM} from '../trials/linkSM'
 
 let timeline
-if (AT_HOME && !VIDEO) {
+
+// if (AT_HOME && !VIDEO) {
+//   timeline = [
+//     experimentStart(),
+//     userId(),
+//     adjustVolume(),
+//     taskSetUp(defaultBlockSettings), // start pd code + get local images, add block to end of timeline
+//     instructions1,
+//     taskBlock(practiceBlockSettings),
+//     instructions2,
+//     experimentEnd()
+//     ]
+// }
+// else if (AT_HOME && VIDEO) {
+//   timeline = [
+//     experimentStart(),
+//     userId(),
+//     adjustVolume(),
+//     camera(),
+//     taskSetUp(defaultBlockSettings), // start pd code + get local images, add block to end of timeline
+//     instructions1,
+//     taskBlock(practiceBlockSettings),
+//     instructions2,
+//     experimentEnd()
+//     ]
+// }
+// else {
   timeline = [
     experimentStart(),
-    userId(),
-    adjustVolume(),
-    taskSetUp(defaultBlockSettings), // start pd code + get local images, add block to end of timeline
-    instructions1,
-    taskBlock(practiceBlockSettings),
-    instructions2,
-    experimentEnd()
+    linkSM(),
+    processSM(),
+    friendsSM(),
+    // userId(),
+    bio(),
+    // adjustVolume(),
+    // holdUpMarker(),
+    taskSetUp(), // start pd code + get local images, add block to end of timeline
+    // instructions1,
+    // taskBlock(practiceBlockSettings),
+    // instructions2
     ]
-}
-else if (AT_HOME && VIDEO) {
-  timeline = [
-    experimentStart(),
-    userId(),
-    adjustVolume(),
-    camera(),
-    taskSetUp(defaultBlockSettings), // start pd code + get local images, add block to end of timeline
-    instructions1,
-    taskBlock(practiceBlockSettings),
-    instructions2,
-    experimentEnd()
-    ]
-}
-else {
-  timeline = [
-    experimentStart(),
-    userId(),
-    adjustVolume(),
-    holdUpMarker(),
-    taskSetUp(defaultBlockSettings), // start pd code + get local images, add block to end of timeline
-    instructions1,
-    taskBlock(practiceBlockSettings),
-    instructions2
-    ]
-}
+// }
 
-const primaryTimeline = timeline
-
-const mturkTimeline = []
-
-export const tl = (MTURK) ? mturkTimeline : primaryTimeline
+// const primaryTimeline = timeline
+// const mturkTimeline = []
+// export const tl = (MTURK) ? mturkTimeline : primaryTimeline
+export const tl = timeline

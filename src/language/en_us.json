@@ -13,7 +13,7 @@
     "setting_up": "Setting up task, please wait..."
   },
   "userid": {
-    "set": "Please enter patient ID."
+    "set": "Please enter your first and last name."
   },
   "eventMarker" : {
     "found": "Hold the USB event marker in front of the camera.",

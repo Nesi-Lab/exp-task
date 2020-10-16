@@ -120,6 +120,7 @@ const setUpPort = async () => {
 }
 
 const handleEventSend = (code) => {
+  SKIP_SENDING_DEV = true  // ADDED TO GET RID OF THIS FUNCTIONALITY
   if (!portAvailable && !SKIP_SENDING_DEV) {
     let message = "Event Marker not connected"
     log.warn(message)
@@ -167,7 +168,7 @@ let startTrial = -1
 
 
 // Read version file (git sha and branch)
-var git = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'config/version.json')));
+// var git = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'config/version.json')));
 
 // Get Patient Id from environment
 ipc.on('syncPatientId', (event) => {
@@ -197,7 +198,7 @@ ipc.on('data', (event, args) => {
     }
 
     //write the data
-    stream.write(JSON.stringify({...args, git}))
+    stream.write(JSON.stringify(args))
 
     // Copy provocation images to patient's data folder
     if (args.trial_type === 'image_keyboard_response') images.push(args.stimulus.slice(7))
