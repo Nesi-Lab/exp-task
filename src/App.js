@@ -9,6 +9,16 @@ import { getTurkUniqueId } from './lib/utils'
 
 // conditionally load electron and psiturk based on MTURK config variable
 // const isElectron = !MTURK
+
+// const { app, BrowserWindow } = require('electron')
+// let mainWindow = new BrowserWindow({
+//   width: 640,
+//   height: 640,
+//   webPreferences: {
+//     nodeIntegration: true
+//   }
+// })
+
 const isElectron = true
 let ipcRenderer = false;
 let psiturk = false

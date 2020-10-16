@@ -1,7 +1,6 @@
-# Provocation Task
-<p float="left">
-  <img src="provocation.svg" width="200" />
-</p>
+# Experimental Task
+
+All of the below and much of the app is from Brown CCV. This is a work in progress.
 
 [![Actions Status](https://github.com/brown-ccv/task-provocation/workflows/Test%2C%20Build%2C%20and%20Package/badge.svg)](https://github.com/brown-ccv/task-provocation/actions)
 
