@@ -399,7 +399,6 @@ const drawInterpQuestion = (ctx, img_coords, font_size) => {
     const txt = "How much does this person want to be friends with you?"
     const buffer = 0.05 * settings.canvasSize  // blank space around question
     const height = textHeight(ctx, txt, settings.canvasSize - 2 * buffer, font_size)
-    console.log("fs", settings.questionFontSize, font_size)
     wrapText(ctx, txt, buffer, img_coords.y - lineHeight(font_size) - height, settings.canvasSize - 2 * buffer, font_size)
 }
 
@@ -490,7 +489,7 @@ const drawSummaryPeople = (ctx, people_lst, mean_score_lst, font_size) => {
         ctx.fillText("Average Rating:", img_coords[i].x + img_coords[i].dx / 2, img_coords[i].y + img_coords[i].dy + lineHeight(font_size));
         
         ctx.font = (font_size + 6) + settings.fontFace;
-        ctx.fillStyle = mean_score_lst[i] >= 2.5 ? COLORS.red : COLORS.green
+        ctx.fillStyle = mean_score_lst[i] >= 2.5 ? COLORS.green : COLORS.red 
         ctx.fillText(mean_score_lst[i], img_coords[i].x + img_coords[i].dx / 2, img_coords[i].y + img_coords[i].dy + lineHeight(font_size) * 2);
 
         // wrapText(ctx, "Average Rating: " + mean_score_lst[i], img_coords[i].x, img_coords[i].y + img_coords[i].dy + lineHeight(font_size), img_coords[i].dx, font_size)

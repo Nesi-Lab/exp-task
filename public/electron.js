@@ -12,6 +12,7 @@ const tar = require('tar')
 const log = require('electron-log')
 
 const AT_HOME = (process.env.REACT_APP_AT_HOME === 'true')
+const OUT_DIR = "./logs/"
 
 // set logging levels
 log.transports.file.level = 'info'
@@ -179,14 +180,15 @@ ipc.on('syncPatientId', (event) => {
 ipc.on('data', (event, args) => {
 
   // initialize file - we got a patinet_id to save the data to
-  if (args.patient_id && fileName === '') {
+  if (args.participant_id && fileName === '') { 
     const dir = app.getPath('userData')
-    patientID = args.patient_id
-    fileName = `pid_${patientID}_${Date.now()}.json`
+    patientID = args.participant_id
+    fileName = `id_${patientID}_${Date.now()}.json`
     filePath = path.resolve(dir, fileName)
     startTrial = args.trial_index
     log.info(filePath)
-    stream = fs.createWriteStream(filePath, {flags:'ax+'});
+    console.log("filepath", OUT_DIR + fileName)
+    stream = fs.createWriteStream(OUT_DIR + fileName, {flags:'ax+'});
     stream.write('[')
   }
 
@@ -226,37 +228,41 @@ ipc.on('save_video', (event, fileName, buffer) => {
 
 // EXPERIMENT END
 ipc.on('end', (event, args) => {
-  // finish writing file
-  stream.write(']')
-  stream.end()
-  stream = false
+  if (stream) {
+    console.log(stream)
+    // finish writing file
+    stream.write(']')
+    stream.end()
+    stream = false 
 
-  // copy file to config location
-  const desktop = app.getPath('desktop')
-  const name = app.getName()
-  const today = new Date(Date.now())
-  const date = today.toISOString().slice(0,10)
-  const copyPath = path.join(desktop, dataDir, `${patientID}`, date, name)
-  fs.mkdir(copyPath, { recursive: true }, (err) => {
-    log.error(err)
-    fs.copyFileSync(filePath, path.join(copyPath, fileName))
-
-    // copy images to config location
-    const sourceImagePath = path.resolve(path.dirname(images[images.length - 1]), '..')
-    const imagePath = path.join(copyPath, 'provocation-images')
-    const imageFileName = path.basename(fileName, '.json') + `.tar.gz`
-    fs.mkdir(imagePath, {recursive: true}, (err) => {
+    // copy file to config location
+    const desktop = app.getPath('desktop')
+    const name = app.getName()
+    const today = new Date(Date.now())
+    const date = today.toISOString().slice(0,10)
+    const copyPath = path.join(desktop, dataDir, `${patientID}`, date, name)
+    fs.mkdir(copyPath, { recursive: true }, (err) => {
       log.error(err)
-      tar.c( // or tar.create
-        {
-          gzip: true,
-          cwd: sourceImagePath
-        },
-        ['.']
-      ).pipe(fs.createWriteStream(path.join(imagePath, imageFileName)))
-    })
+      // fs.copyFileSync(filePath, path.join(copyPath, fileName))
+      // console.log(path.join(copyPath, fileName))
 
-  })
+      // copy images to config location
+      // const sourceImagePath = path.resolve(path.dirname(images[images.length - 1]), '..')
+      // const imagePath = path.join(copyPath, 'provocation-images')
+      // const imageFileName = path.basename(fileName, '.json') + `.tar.gz`
+      // fs.mkdir(imagePath, {recursive: true}, (err) => {
+      //   log.error(err)
+      //   tar.c( // or tar.create
+      //     {
+      //       gzip: true,
+      //       cwd: sourceImagePath
+      //     },
+      //     ['.']
+      //   ).pipe(fs.createWriteStream(path.join(imagePath, imageFileName)))
+      // })
+
+    })
+  }
 
   // quit app
   app.quit()

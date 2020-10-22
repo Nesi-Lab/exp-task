@@ -5,7 +5,7 @@ import $ from 'jquery'
 import { settings } from '../config/main'
 // import { jitter50 } from '../lib/utils'
 
-const DURATION = 3 * 1000  // three seconds
+const DURATION = 1 * 1000  // three seconds
 
 // make sure cursor radius is such that it can only touch one circle at a time
 // const CANVAS_SIZE = ratingSettings.canvasSize

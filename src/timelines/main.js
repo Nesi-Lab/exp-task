@@ -1,4 +1,5 @@
 import bio from '../trials/participantBio'
+import id from '../trials/participantID'
 import { experimentStart } from '../trials/experimentStart'
 import taskSetUp from './taskSetUp'
 import { linkSM, processSM, friendsSM} from '../trials/linkSM'
@@ -32,6 +33,7 @@ let timeline
 // }
 // else {
   timeline = [
+    id(),
     experimentStart(),
     linkSM(),
     processSM(),

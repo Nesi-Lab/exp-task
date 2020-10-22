@@ -1,5 +1,5 @@
 import React from 'react'
-import { Experiment } from 'jspsych-react'
+import { Experiment, jsPsych } from 'jspsych-react'
 import { tl } from './timelines/main'
 // import { MTURK, breathingAudio } from './config/main'
 import './App.css'
@@ -10,16 +10,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 // conditionally load electron and psiturk based on MTURK config variable
 // const isElectron = !MTURK
 
-// const { app, BrowserWindow } = require('electron')
-// let mainWindow = new BrowserWindow({
-//   width: 640,
-//   height: 640,
-//   webPreferences: {
-//     nodeIntegration: true
-//   }
-// })
-
-const isElectron = false
+const isElectron = true
 let ipcRenderer = false;
 let psiturk = false
 if (isElectron) {
@@ -59,6 +50,12 @@ class App extends React.Component {
             }
             else if (psiturk) {
               psiturk.saveData()
+            } else {
+              var fs = require('browserify-fs');
+              fs.writeFile('../participant_output', Object.values(jsPsych.data.get()), function (err) {
+                if (err) throw err;
+                console.log('Saved!');
+              })
             }
           }
         }}
