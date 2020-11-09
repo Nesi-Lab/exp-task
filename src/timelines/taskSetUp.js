@@ -78,7 +78,7 @@ const taskSetUp = () => {
 			// jsPsych.addNodeToEndOfTimeline(buildCountdown(lang.countdown.message, 3), () => {})
 			// jsPsych.addNodeToEndOfTimeline(taskBlock(blockSettings), () => {})
 
-			let i = 7
+			let i = 1
 			var taskTrial = watchingTrial
 			while (i <= 7) {
 				if (i === 1) { jsPsych.addNodeToEndOfTimeline(blockTypeStart('watching'), emptyFun) }
