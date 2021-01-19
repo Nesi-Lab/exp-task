@@ -68,7 +68,8 @@ const blockSummary = (trialDictLeft, trialDictRight, num_watching, ratee_mean_sc
   const rater_r = settings.impersonatorInfo[trialDictRight.rater]
   const ratee = participantInfo()
   let timeline = [
-    summaryScreen(ratee, rater_l, rater_r, ratee_mean_score, num_watching)
+    summaryScreen(ratee, rater_l, rater_r, ratee_mean_score, num_watching, false),
+    summaryScreen(ratee, rater_l, rater_r, ratee_mean_score, num_watching, true)
   ]
   
   return {

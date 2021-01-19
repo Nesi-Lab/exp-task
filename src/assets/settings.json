@@ -1,0 +1,160 @@
+{
+    "taskName": "Experimental Task",
+    "canvasSize": 640,
+    "colors": {
+        "white": "#ffffff",
+        "black": "#000000",
+        "red": "#d40000",
+        "light_red": "#ff4f4f",
+        "green": "#2bb52b",
+        "dark_green": "#007a00",
+        "grey": "#4a4a4a",
+        "light_grey": "#d3d3d3",
+        "light_blue": "#add8e6",
+        "dark_blue": "#020140"
+    },
+    "fontFace": "px Helvetica Neue",
+    "fontSizes": {
+        "small": 18,
+        "medium": 22,
+        "large": 24,
+        "xl": 28
+    },
+    "introScreen": {
+        "welcome": "Welcome to",
+        "name": "Connect",
+        "description": "Connect is a game about how people form first impressions online."
+    },
+    "howItWorksScreen": {
+        "title": "Here's how it works...",
+        "description1": "Connect is a live simulation game. People are participating",
+        "description2": "right now",
+        "description3": "at multiple sites throughout Rhode Island.",
+        "smDescription": "Connect will search your social media networks to see if anyone you know is participating right now.",
+        "impressionsDescription": "On Connect, you will give your first impressions of other people and they will give their first impressions of you.",
+        "getStarted": "Let's get started!"
+    },
+    "howItLooksScreen": {
+        "title": "Here's how it works.",
+        "description1": "Connect users participating right now will be randomly paired with each other.",
+        "description2": "There will be multiple rounds of the game.",
+        "description3": "In each round, users will be providing their first impressions of the people they are paired with."
+    },
+    "getStartedScreen": {
+        "title": "Let's get started!",
+        "description1": "You will be paired with the Connect users you selected.",
+        "description2": "Please give your first impressions by rating how much you think you'd like to be friends with each person."
+    },
+    "pickSM": {
+        "textTop": "Please check any social media sites you use. Connect will search your contacts to see if anyone you know is participating...",
+        "textBottom": "Remember: Connect is totally private. We will never access your personal information, post anything on your account, or notify your contacts.",
+        "imgSize": 60,
+        "checkBoxSize": 50,
+        "checkBoxColor": "white",
+        "fontSize": "medium"
+    },
+    "searchSM": {
+        "text": "Searching your contacts...",
+        "fontSize": "xl",
+        "imgSize": 80
+    },
+    "friendsSM": {
+        "text1": "There are a total of 53 users on Connect.",
+        "text2": "You have 3 friends on Connect right now!",
+        "text3": "You have 15 friends-of-friends on Connect right now!",
+        "imgSize": 80
+    },
+    "photoUpload": {
+        "title": "Time to create your profile!",
+        "titleFontSize": "xl",
+        "text1": "Please upload a photo of yourself.",
+        "text2": "Other people participating in Connect will see your photo.",
+        "prompt": "How much do you like this photo? (Other people won't see your answer)",
+        "fontSize": "medium",
+        "numButtons": 7,
+        "boxSize": 300,
+        "imgSize": 60,
+        "boxColor": "white",
+        "uploadButtonText": "Upload your photo...",
+        "uploadButtonWidth": 250
+    },
+    "bio": {
+        "text1": "Please answer a few questions to complete your bio.",
+        "text2": "Other people participating in Connect will see your bio.",
+        "text3": "How much does this bio represent who you are?",
+        "name": "What is your first and last name?",
+        "town": "What is your hometown?"
+    },
+    "continueButton": {
+        "height": 45,
+        "width": 125,
+        "rounding": 5,
+        "fillColor": "light_grey",
+        "borderColor": "grey",
+        "fontSize": "large",
+        "fontColor": "black"
+    },
+    "caption": {
+        "fontSize": "small",
+        "state": "RI"
+    },
+    "X": {
+        "color": "red",
+        "thickness": 15
+    },
+    "ratingBox": {
+        "fillColor": "light_grey",
+        "borderColor": "black",
+        "fontColor": "black",
+        "fontSize": "xl",
+        "ratingText": "Rating"
+    },
+    "thumb": {
+        "fontColor": "black",
+        "fontSize": "xl",
+        "imgSize": 56,
+        "selectedBorderColor": "grey",
+        "selectedBorderThickness": 3,
+        "color1": "red",
+        "color2": "red",
+        "color3": "dark_green",
+        "color4": "dark_green"
+    },
+    "rater": {
+        "imgSize": 192
+    },
+    "ratee": {
+        "imgSize": 192
+    },
+    "watching": {
+        "imgSize": 192,
+        "fontSize": "large",
+        "fontColor": "light_blue",
+        "fontColor2": "white"
+    },
+    "ratingQuestion": {
+        "text": "How much would you like to be friends with this person?",
+        "rounding": 5,
+        "fillColor": "grey",
+        "fontSize": "large"
+    },
+    "interpQuestion": {
+        "text": "How much does this person want to be friends with you?",
+        "fontSize": "large"
+    },
+    "interpScale": {
+        "fontSize": "medium",
+        "labelFontSize": "small",
+        "labelFontColor": "white",
+        "lowText": "Not at all",
+        "highText": "A lot",
+        "numButtons": 7,
+        "fillColor": "light_grey",
+        "hoverFillColor": "grey",
+        "fontColor": "black"
+    },
+    "bgBoxes": {
+        "color": "dark_blue",
+        "rounding": 10
+    }
+}

@@ -21,14 +21,20 @@ const interpretationScreen = (rater) => {
       let ctx = canvas.getContext('2d');
 
       ctx.clearRect(0, 0, canvas.width, canvas.height); // transparent background
-      const img_coords = drawRater(ctx, rater, settings.bioFontSize, true)
-      drawInterpQuestion(ctx, img_coords, settings.questionFontSize * 1.5)
-      let button_coords = drawInterpScale(ctx, img_coords, null, 28).button_coords
+      const img_coords = drawRater(ctx, rater, true)
+      drawInterpQuestion(ctx, img_coords)
+      let button_coords = drawInterpScale(ctx, img_coords, null).button_coords
 
-      // const handleMoveListener = (e) => {
-      //   var rect = canvas.getBoundingClientRect();
-      //   const x =  e.clientX - rect.left
-      //   const y =  e.clientY - rect.top
+      const handleMoveListener = (e) => {
+        var rect = canvas.getBoundingClientRect();
+        const x =  e.clientX - rect.left
+        const y =  e.clientY - rect.top
+        // ctx.beginPath();
+        // ctx.strokeStyle = "red"
+        // ctx.arc(x, y, 5, 0, 2 * Math.PI);
+        // ctx.stroke();
+        // console.log("\t", x, y)
+
       //   const within = (x, y, coords) => {
       //     const dist = Math.sqrt(Math.pow(coords.x - x, 2) + Math.pow(coords.y - y, 2))
       //     return (dist <= coords.r)
@@ -41,7 +47,7 @@ const interpretationScreen = (rater) => {
       //     }
       //   }
       //   button_coords = drawInterpScale(ctx, img_coords, on, 28).button_coords
-      // }
+      }
 
       const handleClickListener = (e) => {
         var rect = canvas.getBoundingClientRect();
@@ -53,12 +59,13 @@ const interpretationScreen = (rater) => {
         }
         for (let i = 1; i <= 7; i++) {
           if (within(x, y, button_coords[i])) { 
-            console.log(i)
-
+            console.log("CLICK", x, y, i, button_coords[i])
+            $(document).unbind('mousemove');
+            $(document).unbind('click');
             done({choice: i}) }
         }
       }
-      // $(document).bind('mousemove', handleMoveListener)
+      $(document).bind('mousemove', handleMoveListener)
       $(document).bind('click', handleClickListener)
       // ctx.font = 24 + settings.fontFace;
       // ctx.textBaseline = 'top';

@@ -1,0 +1,185 @@
+{
+    "watching": [
+        {"rater": "b", "ratee": "a", "score": 2, "n": 47},
+        {"rater": "a", "ratee": "b", "score": 3, "n": 11},
+        {"rater": "b", "ratee": "c", "score": 3, "n": 47},
+        {"rater": "b", "ratee": "d", "score": 2, "n": 40},
+        {"rater": "b", "ratee": "e", "score": 1, "n": 13},
+        {"rater": "b", "ratee": "f", "score": 2, "n": 8},
+        {"rater": "b", "ratee": "g", "score": 1, "n": 51},
+        {"rater": "b", "ratee": "h", "score": 4, "n": 40},
+        {"rater": "b", "ratee": "i", "score": 2, "n": 44},
+        {"rater": "b", "ratee": "j", "score": 2, "n": 11},
+        {"rater": "b", "ratee": "k", "score": 4, "n": 46},
+        {"rater": "b", "ratee": "l", "score": 1, "n": 12},
+        {"rater": "b", "ratee": "m", "score": 3, "n": 8},
+        {"rater": "b", "ratee": "n", "score": 2, "n": 15},
+        {"rater": "b", "ratee": "o", "score": 3, "n": 57}
+    ],
+    "rating": {
+        "f": [
+            {"ratee": "a", "n": 40},
+            {"ratee": "b", "n": 41},
+            {"ratee": "c", "n": 49},
+            {"ratee": "d", "n": 7},
+            {"ratee": "e", "n": 55},
+            {"ratee": "f", "n": 7},
+            {"ratee": "g", "n": 9},
+            {"ratee": "h", "n": 13},
+            {"ratee": "i", "n": 59},
+            {"ratee": "j", "n": 43},
+            {"ratee": "k", "n": 58},
+            {"ratee": "l", "n": 10},
+            {"ratee": "m", "n": 10},
+            {"ratee": "n", "n": 13},
+            {"ratee": "o", "n": 12}
+        ],
+        "m": [
+            {"ratee": "a", "n": 10},
+            {"ratee": "b", "n": 9},
+            {"ratee": "c", "n": 11},
+            {"ratee": "d", "n": 49},
+            {"ratee": "e", "n": 55},
+            {"ratee": "f", "n": 11},
+            {"ratee": "g", "n": 58},
+            {"ratee": "h", "n": 42},
+            {"ratee": "i", "n": 13},
+            {"ratee": "j", "n": 56},
+            {"ratee": "k", "n": 41},
+            {"ratee": "l", "n": 46},
+            {"ratee": "m", "n": 46},
+            {"ratee": "n", "n": 10},
+            {"ratee": "o", "n": 10}
+        ]
+    },
+    "rated": {
+        "f": {
+            "acceptance": {
+                "trial": [
+                    {"rater": "a", "score": 3, "n": 44},
+                    {"rater": "b", "score": 2, "n": 12},
+                    {"rater": "c", "score": 4, "n": 48},
+                    {"rater": "d", "score": 4, "n": 11},
+                    {"rater": "e", "score": 4, "n": 14},
+                    {"rater": "f", "score": 1, "n": 10},
+                    {"rater": "g", "score": 4, "n": 14},
+                    {"rater": "h", "score": 0, "n": 14},
+                    {"rater": "i", "score": 3, "n": 15},
+                    {"rater": "j", "score": 4, "n": 51},
+                    {"rater": "k", "score": 3, "n": 54},
+                    {"rater": "l", "score": 4, "n": 56},
+                    {"rater": "m", "score": 0, "n": 10},
+                    {"rater": "n", "score": 1, "n": 41},
+                    {"rater": "o", "score": 4, "n": 54}
+                ],
+                "summary": {
+                    "rateeMeanScore": 3.2, 
+                    "raters": [
+                        {"raters": [0, 1], "n": 58},
+                        {"raters": [2, 5], "n": 54},
+                        {"raters": [3, 7], "n": 53},
+                        {"raters": [4, 13], "n": 10},
+                        {"raters": [6, 8], "n": 14},
+                        {"raters": [9, 10], "n": 10},
+                        {"raters": [11, 14], "n": 48}
+                    ]
+                }
+            },
+            "rejection": {
+                "trial": [
+                    {"rater": "a", "score": 1, "n": 15},
+                    {"rater": "b", "score": 3, "n": 50},
+                    {"rater": "c", "score": 2, "n": 14},
+                    {"rater": "d", "score": 0, "n": 8},
+                    {"rater": "e", "score": 2, "n": 40},
+                    {"rater": "f", "score": 1, "n": 53},
+                    {"rater": "g", "score": 2, "n": 7},
+                    {"rater": "h", "score": 3, "n": 59},
+                    {"rater": "i", "score": 1, "n": 51},
+                    {"rater": "j", "score": 2, "n": 7},
+                    {"rater": "k", "score": 2, "n": 60},
+                    {"rater": "l", "score": 1, "n": 14},
+                    {"rater": "m", "score": 4, "n": 60},
+                    {"rater": "n", "score": 0, "n": 14},
+                    {"rater": "o", "score": 1, "n": 56}
+                ],
+                "summary": {
+                    "rateeMeanScore": 1.9, 
+                    "raters": [
+                        {"raters": [0, 1], "n": 42},
+                        {"raters": [2, 3], "n": 11},
+                        {"raters": [4, 7], "n": 15},
+                        {"raters": [5, 12], "n": 52},
+                        {"raters": [6, 8], "n": 14},
+                        {"raters": [9, 10], "n": 56},
+                        {"raters": [11, 14], "n": 9}
+                    ]
+                }
+            }
+        },
+        "m": {
+            "acceptance": {
+                "trial": [
+                    {"rater": "a", "score": 4, "n": 57},
+                    {"rater": "b", "score": 1, "n": 10},
+                    {"rater": "c", "score": 3, "n": 46},
+                    {"rater": "d", "score": 0, "n": 56},
+                    {"rater": "e", "score": 4, "n": 11},
+                    {"rater": "f", "score": 3, "n": 13},
+                    {"rater": "g", "score": 3, "n": 12},
+                    {"rater": "h", "score": 0, "n": 55},
+                    {"rater": "i", "score": 1, "n": 47},
+                    {"rater": "j", "score": 3, "n": 41},
+                    {"rater": "k", "score": 3, "n": 11},
+                    {"rater": "l", "score": 2, "n": 8},
+                    {"rater": "m", "score": 3, "n": 13},
+                    {"rater": "n", "score": 3, "n": 49},
+                    {"rater": "o", "score": 4, "n": 7}
+                ],
+                "summary": {
+                    "rateeMeanScore": 2.9, 
+                    "raters": [
+                        {"raters": [0, 1], "n": 46},
+                        {"raters": [2, 3], "n": 14},
+                        {"raters": [4, 8], "n": 54},
+                        {"raters": [5, 11], "n": 10},
+                        {"raters": [6, 9], "n": 13} ,
+                        {"raters": [10, 12], "n": 48},
+                        {"raters": [13, 14],  "n": 7}
+                    ]
+                }
+            },
+            "rejection": {
+                "trial": [
+                    {"rater": "a", "score": 2, "n": 11},
+                    {"rater": "b", "score": 3, "n": 42},
+                    {"rater": "c", "score": 0, "n": 57},
+                    {"rater": "d", "score": 2, "n": 7},
+                    {"rater": "e", "score": 3, "n": 47},
+                    {"rater": "f", "score": 1, "n": 14},
+                    {"rater": "g", "score": 2, "n": 46},
+                    {"rater": "h", "score": 3, "n": 50}, 
+                    {"rater": "i", "score": 1, "n": 10},
+                    {"rater": "j", "score": 2, "n": 11},
+                    {"rater": "k", "score": 1, "n": 59},
+                    {"rater": "l", "score": 1, "n": 8},
+                    {"rater": "m", "score": 0, "n": 13},
+                    {"rater": "n", "score": 1, "n": 42},
+                    {"rater": "o", "score": 1, "n": 55}
+                ],
+                "summary": {
+                    "rateeMeanScore": 2.2, 
+                    "raters": [
+                        {"raters": [0, 1], "n": 7},
+                        {"raters": [3, 2], "n": 48},
+                        {"raters": [5, 4], "n": 44},
+                        {"raters": [6, 7], "n": 13},
+                        {"raters": [8, 9], "n": 45},
+                        {"raters": [10, 11], "n": 44},
+                        {"raters": [13, 14], "n": 13}
+                    ]
+                }
+            }
+        }
+    }
+}

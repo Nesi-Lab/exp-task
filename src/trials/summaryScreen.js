@@ -8,7 +8,7 @@ const canvasHTML = `<canvas width="${settings.canvasSize}" height="${settings.ca
     Your browser does not support HTML5 canvas
   </canvas>`
 
-const summaryScreen = (ratee, rater_l, rater_r, ratee_mean_score, n) => {
+const summaryScreen = (ratee, rater_l, rater_r, ratee_mean_score, n, display_scores) => {
     let stimulus = `<div class="task-container">` + canvasHTML + `</div>`
 
     return {
@@ -22,13 +22,13 @@ const summaryScreen = (ratee, rater_l, rater_r, ratee_mean_score, n) => {
         let canvas = document.querySelector('#jspsych-canvas');
         let ctx = canvas.getContext('2d');
 
-        $('html').css('cursor', 'none')
-        drawWatching(ctx, n, settings.watchingFontSize, false)
-        drawSummaryPeople(ctx, [rater_l, ratee, rater_r], [rater_l.mean_score, ratee_mean_score, rater_r.mean_score], settings.bioFontSize)
+        // $('html').css('cursor', 'none')
+        drawWatching(ctx, n, false, true)
+        drawSummaryPeople(ctx, [rater_l, ratee, rater_r], [rater_l.mean_score, ratee_mean_score, rater_r.mean_score], 20, display_scores)
         //  TODO add scores as part of drawSummaryPeople
 
         setTimeout(() => {
-            $('html').css('cursor', 'auto')
+            // $('html').css('cursor', 'auto')
             done({})
           }, DURATION)
 

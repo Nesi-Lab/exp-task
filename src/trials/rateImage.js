@@ -35,7 +35,7 @@ const rateImage = () => {
         let animation
 
         // hide the mouse
-        $('html').css('cursor', 'none')
+        // $('html').css('cursor', 'none')
 
         let w = $('#jspsych-canvas').width()
         let x = w / 2
@@ -136,7 +136,7 @@ const rateImage = () => {
               setTimeout(
                   () => {
                     // re-show the mouse
-                    $('html').css('cursor', 'auto')
+                    // $('html').css('cursor', 'auto')
 
                     done({circle: circle, click: {x: x, y: y}, code: [showCode, rateCode], rt: end_rt, path: path})
                   },

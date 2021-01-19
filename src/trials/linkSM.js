@@ -8,22 +8,43 @@ const canvasHTML = `<canvas width="${settings.canvasSize}" height="${settings.ca
     Your browser does not support HTML5 canvas
   </canvas>`
 
+const formField = (placeholder, y) => {
+    const left = placeholder == "password" ? 405 : 195
+    const top = 120 + y * 70
+    return `<input type="${placeholder == "password" ? "password" : "text"}" placeholder=${placeholder} style="position:absolute;left:${left}px;top:${top}px;width:180px;" id="${placeholder.replace("/", "")}${y}"/>`
+}
+
 const linkSM = () => {
-    let stimulus = `<div class="task-container">` + canvasHTML + `</div>`
 
     return {
         type: 'call_function',
         async: true,
         func: (done) => {
 
+            const formHTML = formField("email/phone", 0) + formField("password", 0) +
+                formField("username", 1) + formField("password", 1) +
+                formField("username", 2) + formField("password", 2) +
+                formField("username", 3) + formField("password", 3)
+
+            let stimulus = `<div class="task-container">` + canvasHTML + formHTML + `</div>`
+
             document.getElementById('jspsych-content').innerHTML = stimulus
             // set up canvas
             let canvas = document.querySelector('#jspsych-canvas');
+            for (let i = 0; i <= 3; i++) {
+                const user = i == 0 ? "#emailphone" : "#username"
+                let curr = document.querySelector(user + i)
+                curr.style.left = parseInt(curr.style.left.replace("px", "")) + canvas.offsetLeft + "px"
+                curr.style.top = parseInt(curr.style.top.replace("px", "")) + canvas.offsetTop + "px"
+                curr = document.querySelector('#password' + i)
+                curr.style.left = parseInt(curr.style.left.replace("px", "")) + canvas.offsetLeft + "px"
+                curr.style.top = parseInt(curr.style.top.replace("px", "")) + canvas.offsetTop + "px"
+            }
             let ctx = canvas.getContext('2d');
 
             const socials = ["facebook", "instagram", "snapchat", "tiktok"]
 
-            const all_coords = drawSM(ctx, socials, 24)
+            const all_coords = drawSM(ctx, socials)
             const all_box_coords = all_coords.boxes
             const continue_coords = all_coords.continue
 
@@ -51,6 +72,7 @@ const linkSM = () => {
                             checked_socials.push(socials[i])
                         }
                     }
+                    $(document).unbind('click', handleClickListener)
                     done({ checked_socials: checked_socials })
                 }
             }
@@ -61,6 +83,7 @@ const linkSM = () => {
 }
 
 const processSM = () => {
+
     let stimulus = `<div class="task-container">` + canvasHTML + `</div>`
 
     return {
@@ -84,7 +107,7 @@ const processSM = () => {
                 }, duration * (i + 1))
             }
             setTimeout(() => {
-                done({checked_socials: checked_socials})
+                done({ checked_socials: checked_socials })
             }, duration * (all_img_coords.length + 1))
         }
     }
@@ -106,14 +129,19 @@ const friendsSM = () => {
             const checked_socials = all_vals[Object.keys(all_vals).length - 1].value.checked_socials
 
             const all_coords = drawFriendsSM(ctx, checked_socials, 24)
+            for (let i = 0; i < all_coords.boxes.length; i++) {
+                setTimeout(() => {
+                    drawCheck(ctx, all_coords.boxes[i], false)
+                }, 1)
+            }
             const all_box_coords = all_coords.boxes
             const continue_coords = all_coords.continue
 
             const buffer = 30
             const font_size = 24
-            let new_y = wrapText(ctx, "There are a total of 53 users on Connect.", buffer, all_box_coords.length === 0 ? buffer : all_box_coords[0].y + all_box_coords[0].dy + buffer, settings.canvasSize - buffer * 2, font_size)
-            new_y = wrapText(ctx, "You have 3 friends on Connect right now!", buffer, new_y + lineHeight(font_size), settings.canvasSize - buffer * 2, font_size)
-            wrapText(ctx, "You have 15 friends-of-friends on Connect right now!", buffer, new_y + lineHeight(font_size), settings.canvasSize - buffer * 2, font_size)
+            let new_y = wrapText(ctx, settings.friendsSM.text1, buffer, all_box_coords.length === 0 ? buffer : all_box_coords[0].y + all_box_coords[0].dy + buffer, settings.canvasSize - buffer * 2, font_size)
+            new_y = wrapText(ctx, settings.friendsSM.text2, buffer, new_y + lineHeight(font_size), settings.canvasSize - buffer * 2, font_size)
+            wrapText(ctx, settings.friendsSM.text3, buffer, new_y + lineHeight(font_size), settings.canvasSize - buffer * 2, font_size)
 
             const handleClickListener = (e) => {
                 var rect = canvas.getBoundingClientRect();
@@ -123,6 +151,7 @@ const friendsSM = () => {
                     return ((y > coords.y) && (y < (coords.y + coords.dy)) && (x > coords.x) && (x < (coords.x + coords.dx)))
                 }
                 if (within(x, y, continue_coords)) {
+                    $(document).unbind('click', handleClickListener)
                     done({})
                 }
             }

@@ -12,10 +12,13 @@
 # production
 /build
 /dist
+/logs
 
 # misc
 .DS_Store
 .env*
+/src/webgazer.js
+/src/ignore
 
 npm-debug.log*
 yarn-debug.log*

@@ -1,0 +1,77 @@
+{
+    "a": {
+        "town": "Providence",
+        "bio": "<3 Inspirational quote",
+        "meanScore": 2.5
+    }, 
+    "b": {
+        "town": "Pawtucket",
+        "bio": "Sorry for eating your homework :(",
+        "meanScore": 4
+    }, 
+    "c": {
+        "town": "Newport",
+        "bio": "I like long walks in the park!",
+        "meanScore": 3.1
+    },
+    "d": {
+        "town": "Providence",
+        "bio": "here is a super long bio that should wrap",
+        "meanScore": 1.9
+    },
+    "e": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    },
+    "f": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 3.2
+    },
+    "g": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 3.5
+    },
+    "h": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    },
+    "i": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    },
+    "j": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    },
+    "k": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    },
+    "l": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    },
+    "m": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    },
+    "n": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    },
+    "o": {
+        "town": "Providence",
+        "bio": "bio here",
+        "meanScore": 2.5
+    }
+}

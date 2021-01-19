@@ -1,0 +1,15 @@
+{
+    "elements": {
+        "rater": {},
+        "ratee": {},
+        "watching": {
+            "rateScreen": {},
+            "interpretationScreen": {}
+        },
+        "rateQuestion": {},
+        "scale": {
+            "interpretationScreen": {},
+            "feelingScreen": {}
+        }
+    }
+}

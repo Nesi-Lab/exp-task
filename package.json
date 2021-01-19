@@ -24,6 +24,7 @@
     "jquery": "^3.4.1",
     "jspsych-react": "^0.2.2",
     "lodash": "^4.17.11",
+    "numeric": "1.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
@@ -82,7 +83,8 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.14.2",
     "eslint-plugin-standard": "^4.0.0",
-    "require-context.macro": "^1.1.1"
+    "require-context.macro": "^1.1.1",
+    "webgazer": "^2.0.1"
   },
   "babel": {
     "plugin": [

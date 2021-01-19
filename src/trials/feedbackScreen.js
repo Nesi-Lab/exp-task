@@ -38,7 +38,7 @@ const feedbackScreen = (rater, ratee, n, score, isWatchingTrial=false) => {
       let ctx = canvas.getContext('2d');
       // let animation
 
-      $('html').css('cursor', 'none')
+      // $('html').css('cursor', 'none')
 
       // let w = $('#jspsych-canvas').width()
       // let h = $('#jspsych-canvas').height()
@@ -46,10 +46,10 @@ const feedbackScreen = (rater, ratee, n, score, isWatchingTrial=false) => {
       // let circles = getCircles(ratingSettings.min, ratingSettings.max, CANVAS_SIZE)
 
       ctx.clearRect(0, 0, canvas.width, canvas.height); // transparent background
-      drawWatching(ctx, n, settings.watchingFontSize, isWatchingTrial)
-      drawQuestion(ctx, score, settings.questionFontSize)
-      drawRater(ctx, rater, settings.bioFontSize, false)
-      drawRatee(ctx, ratee, score, settings.bioFontSize)
+      drawWatching(ctx, n, isWatchingTrial)
+      drawQuestion(ctx, score)
+      drawRater(ctx, rater, false)
+      drawRatee(ctx, ratee, score)
 
       // ctx.clearRect(0, 0, canvas.width, canvas.height); // transparent background
       // drawQuestion(ctx, CANVAS_SIZE);
@@ -59,7 +59,7 @@ const feedbackScreen = (rater, ratee, n, score, isWatchingTrial=false) => {
       // drawFace(ctx, rater, CANVAS_SIZE, true);
 
       setTimeout(() => {
-        $('html').css('cursor', 'auto')
+        // $('html').css('cursor', 'auto')
         done({n: n, imagePath: ratee.img})
       }, DURATION)
 

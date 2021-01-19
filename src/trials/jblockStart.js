@@ -9,7 +9,7 @@ const jblockStart = (jblockNum, duration=3*1000, hideCursor=true) => {
     stimulus: stimulus,
     trial_duration: duration,
     on_load: () => {
-      if (hideCursor) $('html').css('cursor', 'none')
+      // if (hideCursor) $('html').css('cursor', 'none')
       }
     }
   }

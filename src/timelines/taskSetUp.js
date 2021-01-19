@@ -2,10 +2,7 @@ import { jsPsych } from 'jspsych-react'
 // import { AT_HOME, MTURK, lang, numRequiredImages, defaultBlockSettings } from '../config/main'
 import { settings } from '../config/main'
 import experimentEnd from '../trials/experimentEnd'
-// import blockEnd from '../trials/blockEnd'
-// import buildCountdown from '../trials/countdown'
-// import startCode from '../trials/startCode'
-// import taskBlock from './taskBlock'
+import feelingScreen from '../trials/feelingScreen'
 import { shuffleArray } from '../lib/utils'
 import { watchingTrial, ratingTrial, ratedTrial, blockSummary } from './taskTrial'
 import jblockStart from '../trials/jblockStart'
@@ -78,7 +75,7 @@ const taskSetUp = () => {
 			// jsPsych.addNodeToEndOfTimeline(buildCountdown(lang.countdown.message, 3), () => {})
 			// jsPsych.addNodeToEndOfTimeline(taskBlock(blockSettings), () => {})
 
-			let i = 1
+			let i = 1;
 			var taskTrial = watchingTrial
 			while (i <= 7) {
 				if (i === 1) { jsPsych.addNodeToEndOfTimeline(blockTypeStart('watching'), emptyFun) }
@@ -101,6 +98,7 @@ const taskSetUp = () => {
 							ratee_mean_score
 						), emptyFun)
 					)
+					jsPsych.addNodeToEndOfTimeline(feelingScreen(), emptyFun)
 				}
 				i += 1
 			}

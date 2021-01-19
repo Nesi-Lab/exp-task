@@ -1,0 +1,23 @@
+{
+    "taskName": "Experimental Task",
+    "canvasSize": 640,
+    "colors": {
+        "white": "#ffffff",
+        "black": "#000000",
+        "red": "#d40000",
+        "light_red": "#ff4f4f",
+        "green": "#2bb52b",
+        "dark_green": "#007a00",
+        "grey": "#4a4a4a",
+        "light_grey": "#d3d3d3",
+        "light_blue": "#add8e6",
+        "dark_blue": "#020140"
+    },
+    "fontFace": "px Helvetica Neue",
+    "fontSizes": {
+        "small": 18,
+        "medium": 22,
+        "large": 24,
+        "xl": 28
+    }
+}

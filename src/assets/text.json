@@ -1,0 +1,48 @@
+{
+    "introScreen": {
+        "welcome": "Welcome to",
+        "name": "Connect",
+        "description": "Connect is a game about how people form first impressions online."
+    },
+    "howItWorksScreen": {
+        "title": "Here's how it works...",
+        "description1": "Connect is a live simulation game. People are participating",
+        "description2": "right now",
+        "description3": "at multiple sites throughout Rhode Island.",
+        "smDescription": "Connect will search your social media networks to see if anyone you know is participating right now.",
+        "impressionsDescription": "On Connect, you will give your first impressions of other people and they will give their first impressions of you.",
+        "getStarted": "Let's get started!"
+    },
+    "getStartedScreen": {
+        "title": "Let's get started!",
+        "description1": "You will be paired with the Connect users you selected.",
+        "description2": "Please give your first impressions by rating how much you think you'd like to be friends with each person."
+    },
+    "pickSM": {
+        "textTop": "Please check any social media sites you use. Connect will search your contacts to see if anyone you know is participating...",
+        "textBottom": "Remember: Connect is totally private. We will never access your personal information, post anything on your account, or notify your contacts."
+    },
+    "searchSM": {
+        "text": "Searching your contacts..."
+    },
+    "friendsSM": {
+        "text1": "There are a total of 53 users on Connect.",
+        "text2": "You have 3 friends on Connect right now!",
+        "text3": "You have 15 friends-of-friends on Connect right now!"
+    },
+    "bio": {
+        "text1": "Please answer a few questions to complete your bio.",
+        "text2": "Other people participating in Connect will see your bio.",
+        "text3": "How much does this bio represent who you are?",
+        "name": "What is your first and last name?",
+        "town": "What is your hometown?"
+    },
+    "ratingQuestion": {
+        "text": "How much would you like to be friends with this person?"
+    },
+    "interpQuestion": {
+        "text": "How much does this person want to be friends with you?",
+        "lowText": "Not at all",
+        "highText": "A lot"
+    }
+}
