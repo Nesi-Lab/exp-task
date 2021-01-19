@@ -15,7 +15,6 @@ import igImg from '../assets/src-images/ig.png'
 import scImg from '../assets/src-images/sc.png'
 import ttImg from '../assets/src-images/tt.png'
 import checkImg from '../assets/src-images/check.png'
-import loadingImg from '../assets/src-images/loading.gif'
 
 const importAll = (r) => {
 	return r.keys().map(r);
@@ -68,7 +67,6 @@ settings.socials = {
 	tiktok: ttImg
 }
 settings.check = checkImg
-settings.loading = loadingImg
 
 settings = Object.assign({}, settings, settingInfo)
 
