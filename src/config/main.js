@@ -28,7 +28,7 @@ const genParticipantImage = () => {
 
 const genPeople = () => {
 	// ASSUMING THAT DIRECTORY ORDER IS ALPHABETICAL
-	const participantImage = genParticipantImage()
+	// const participantImage = genParticipantImage()
 	const impersonatorImages = importAll(requireContext('../assets/impersonator-images', false, /\.(png|jpe?g|svg)$/))
 
 	// transform dict of id --> details into a sorted list of lists
@@ -52,7 +52,7 @@ const genPeople = () => {
 	return {
 		impersonatorBlocks: impersonatorInfo.blocks,
 		impersonatorInfo: impersonatorInfoWithPhotos,
-		participantImage: participantImage
+		participantImage: null
 	}
 }
 

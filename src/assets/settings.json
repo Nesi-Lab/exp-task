@@ -71,7 +71,6 @@
         "text2": "Other people participating in Connect will see your photo.",
         "prompt": "How much do you like this photo? (Other people won't see your answer)",
         "fontSize": "medium",
-        "numButtons": 7,
         "boxSize": 300,
         "imgSize": 60,
         "boxColor": "white",
@@ -79,11 +78,13 @@
         "uploadButtonWidth": 250
     },
     "bio": {
+        "title": "Time to create your profile!",
         "text1": "Please answer a few questions to complete your bio.",
         "text2": "Other people participating in Connect will see your bio.",
-        "text3": "How much does this bio represent who you are?",
-        "name": "What is your first and last name?",
-        "town": "What is your hometown?"
+        "prompt": "How much does this bio represent who you are?",
+        "town": "What is your hometown?",
+        "activity": "What do you like to do in your free time?",
+        "emoji": "Pick an emoji!"
     },
     "continueButton": {
         "height": 45,

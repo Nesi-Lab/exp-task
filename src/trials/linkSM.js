@@ -14,6 +14,21 @@ const formField = (placeholder, y) => {
     return `<input type="${placeholder == "password" ? "password" : "text"}" placeholder=${placeholder} style="position:absolute;left:${left}px;top:${top}px;width:180px;" id="${placeholder.replace("/", "")}${y}"/>`
 }
 
+let startingLeft = null;
+let startingTops = [null, null, null, null]
+
+const fixLocs = () => {
+    let canvas = document.querySelector('#jspsych-canvas');
+    for (let i = 0; i <= 3; i++) {
+        const user = i == 0 ? "#emailphone" : "#username"
+        let curr = document.querySelector(user + i)
+        if (!startingLeft) { startingLeft = parseInt(curr.style.left.replace("px", ""))}
+        if (!startingTops[i]) { startingTops[i] = parseInt(curr.style.top.replace("px", ""))}
+        curr.style.left = startingLeft + canvas.offsetLeft + "px"
+        curr.style.top = startingTops[i] + canvas.offsetTop + "px"
+    }
+}
+
 const linkSM = () => {
 
     return {
@@ -21,25 +36,17 @@ const linkSM = () => {
         async: true,
         func: (done) => {
 
-            const formHTML = formField("email/phone", 0) + formField("password", 0) +
-                formField("username", 1) + formField("password", 1) +
-                formField("username", 2) + formField("password", 2) +
-                formField("username", 3) + formField("password", 3)
+            const formHTML = formField("email/phone", 0) +
+                formField("username", 1) +
+                formField("username", 2) +
+                formField("username", 3)
 
             let stimulus = `<div class="task-container">` + canvasHTML + formHTML + `</div>`
 
             document.getElementById('jspsych-content').innerHTML = stimulus
             // set up canvas
             let canvas = document.querySelector('#jspsych-canvas');
-            for (let i = 0; i <= 3; i++) {
-                const user = i == 0 ? "#emailphone" : "#username"
-                let curr = document.querySelector(user + i)
-                curr.style.left = parseInt(curr.style.left.replace("px", "")) + canvas.offsetLeft + "px"
-                curr.style.top = parseInt(curr.style.top.replace("px", "")) + canvas.offsetTop + "px"
-                curr = document.querySelector('#password' + i)
-                curr.style.left = parseInt(curr.style.left.replace("px", "")) + canvas.offsetLeft + "px"
-                curr.style.top = parseInt(curr.style.top.replace("px", "")) + canvas.offsetTop + "px"
-            }
+            fixLocs()
             let ctx = canvas.getContext('2d');
 
             const socials = ["facebook", "instagram", "snapchat", "tiktok"]
@@ -73,11 +80,12 @@ const linkSM = () => {
                         }
                     }
                     $(document).unbind('click', handleClickListener)
+                    window.onresize = null
                     done({ checked_socials: checked_socials })
                 }
             }
             $(document).bind('click', handleClickListener)
-
+            window.onresize = fixLocs
         }
     }
 }
@@ -160,4 +168,15 @@ const friendsSM = () => {
     }
 }
 
-export { linkSM, processSM, friendsSM }
+const socialMedia = () => {
+    return {
+		type: 'html_keyboard_response',
+		timeline: [
+            linkSM(),
+            processSM(),
+            friendsSM()
+        ]
+	}
+}
+
+export { socialMedia }

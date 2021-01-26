@@ -55,7 +55,7 @@ const drawPhotoUpload = (ctx) => {
 
     const end_of_text_y2 = wrapText(ctx, set.text1, box_coords.x + box_coords.dx + buffer * 3, box_coords.y, settings.canvasSize - (box_coords.x + box_coords.dx + buffer * 6), settings.fontSizes[set.fontSize])
     const end_of_text_y3 = wrapText(ctx, set.text2, box_coords.x + box_coords.dx + buffer * 3, end_of_text_y2 + buffer * 2, settings.canvasSize - (box_coords.x + box_coords.dx + buffer * 6), settings.fontSizes[set.fontSize])
-    const end_of_text_y4 = wrapText(ctx, set.prompt, box_coords.x + box_coords.dx + buffer * 3, end_of_text_y3 + buffer * 2, settings.canvasSize - (box_coords.x + box_coords.dx + buffer * 6), settings.fontSizes[set.fontSize])
+    // const end_of_text_y4 = wrapText(ctx, set.prompt, box_coords.x, box_coords.y + box_coords.dy + buffer * 2, settings.canvasSize - 2 * buffer, settings.fontSizes[set.fontSize])
 
     const continue_coords = drawContinue(ctx)
     return {

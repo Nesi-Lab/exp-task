@@ -5,12 +5,13 @@ import { interpretationScreen } from "../trials/interpretationScreen"
 import { summaryScreen } from "../trials/summaryScreen"
 import { settings } from '../config/main'
 import { jsPsych } from 'jspsych-react'
+import { findData } from '../lib/utils'
 
 const participantInfo = () => {
   return {
     "town": jsPsych.data.get().values()[0].participant_town,
     "bio": jsPsych.data.get().values()[0].participant_bio,
-    "img": settings.participantImage
+    "img": findData('participant_img')
   }
 }
 

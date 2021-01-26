@@ -2,19 +2,16 @@ import { bio, photo } from '../trials/participantBio'
 import id from '../trials/participantID'
 import { experimentStart, tutorial } from '../trials/experimentStart'
 import taskSetUp from './taskSetUp'
-import { linkSM, processSM, friendsSM} from '../trials/linkSM'
+import { socialMedia } from '../trials/linkSM'
 import feelingScreen from '../trials/feelingScreen'
 import feelingScreens from '../trials/feelingScreens'
+import { jsPsych } from 'jspsych-react'
 
 let timeline = [
   id(),
-  // feelingScreens(),
-  // feelingScreen(),
+  feelingScreens(),
   experimentStart(),
-  linkSM(),
-  processSM(),
-  friendsSM(),
-  photo(),
+  socialMedia(),
   bio(),
   tutorial(),
   taskSetUp()

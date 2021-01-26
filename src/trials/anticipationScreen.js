@@ -79,7 +79,10 @@ const anticipationScreenInteractive = (rater, ratee, n) => {
           return ((y > coords.y) && (y < (coords.y + coords.dy)) && (x > coords.x) && (x < (coords.x + coords.dx)))
         }
         for (let i = 1; i <= 4; i++) {
-          if (within(x, y, thumb_coords[i])) { done({choice: i}) }
+          if (within(x, y, thumb_coords[i])) { 
+            $(document).unbind('click', handleClickListener)
+            done({choice: i}) 
+          }
         }
       }
 

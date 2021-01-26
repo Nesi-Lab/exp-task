@@ -2,7 +2,7 @@ import { jsPsych } from 'jspsych-react'
 // import { AT_HOME, MTURK, lang, numRequiredImages, defaultBlockSettings } from '../config/main'
 import { settings } from '../config/main'
 import experimentEnd from '../trials/experimentEnd'
-import feelingScreen from '../trials/feelingScreen'
+import feelingScreens from '../trials/feelingScreens'
 import { shuffleArray } from '../lib/utils'
 import { watchingTrial, ratingTrial, ratedTrial, blockSummary } from './taskTrial'
 import jblockStart from '../trials/jblockStart'
@@ -98,7 +98,7 @@ const taskSetUp = () => {
 							ratee_mean_score
 						), emptyFun)
 					)
-					jsPsych.addNodeToEndOfTimeline(feelingScreen(), emptyFun)
+					jsPsych.addNodeToEndOfTimeline(feelingScreens(), emptyFun)
 				}
 				i += 1
 			}

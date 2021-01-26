@@ -79,3 +79,13 @@ html, body, #root, .App {
   margin: 1rem;
   width: 10rem !important;
 }
+/* 
+.jspsych-slider {
+  margin: 100px
+} */
+
+.jspsych-content {
+  margin-left: 75px;
+  margin-right: 75px
+}
+
